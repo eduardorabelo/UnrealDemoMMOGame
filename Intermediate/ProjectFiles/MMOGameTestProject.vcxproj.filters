@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\MMOGameTestProject.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{6B442AAF-A3F1-4C9E-85DA-B6ABEB428DA4}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\MMOGameTestProject.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\MMOGameTestProjectEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{345800A9-E002-47EE-AB10-1D0174C5D7E7}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEditorUserSettings.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultInput.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\MMOGameTestProject">
+			<UniqueIdentifier>{7C0538DC-3121-46F8-AFE3-5750372F7B93}</UniqueIdentifier>
+		</Filter>
+		<ClCompile Include="..\..\Source\MMOGameTestProject\FlyingConeClass.cpp">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MMOGameTestProject\FlyingConeClass.h">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\MMOGameTestProject\KillableObject.cpp">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MMOGameTestProject\KillableObject.h">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClInclude >
+		<None Include="..\..\Source\MMOGameTestProject\MMOGameTestProject.Build.cs">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\MMOGameTestProject\MMOGameTestProject.cpp">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MMOGameTestProject\MMOGameTestProject.h">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\MMOGameTestProject\MMOGameTestProjectCharacter.cpp">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MMOGameTestProject\MMOGameTestProjectCharacter.h">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\MMOGameTestProject\MMOGameTestProjectGameMode.cpp">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\MMOGameTestProject\MMOGameTestProjectGameMode.h">
+			<Filter>Source\MMOGameTestProject</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
