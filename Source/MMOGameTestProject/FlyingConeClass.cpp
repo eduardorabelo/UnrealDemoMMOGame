@@ -25,19 +25,14 @@ void AFlyingConeClass::Tick( float DeltaTime )
 	Super::Tick( DeltaTime );
 
 	FVector newLocation = GetActorLocation();
-	FVector newScale = GetActorScale3D();
 	float deltaY = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime));
 	float deltaX = (FMath::Cos(RunningTime + DeltaTime) - FMath::Cos(RunningTime));
 
-	newLocation.X += deltaX * 200.0f;
-	newLocation.Y += deltaY * 200.0f;
-
-	newScale.X = deltaX;
-	newScale.Y = deltaY;
-
+	newLocation.X += deltaX * 300.0f;
+	newLocation.Y += deltaY * 300.0f;
+	
 	RunningTime += DeltaTime;
 
 	SetActorLocation(newLocation);
-	SetActorScale3D(newScale);
 }
 

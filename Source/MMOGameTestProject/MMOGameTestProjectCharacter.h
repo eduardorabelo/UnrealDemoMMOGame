@@ -15,7 +15,18 @@ class AMMOGameTestProjectCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+
 public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General")
+		int32 SafeFallingHeight = 5;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "General")
+		int32 Health = 100;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "General")
+		bool IsFalling = false;
+
 	AMMOGameTestProjectCharacter(const FObjectInitializer& ObjectInitializer);
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
@@ -25,6 +36,18 @@ public:
 	/** Base look up/down rate, in deg/sec. Other scaling may affect final rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
+
+	// Called every frame
+	virtual void Tick(float DeltaSeconds) override;
+
+	virtual void Jump() override;
+
+	virtual void StopJumping() override;
+
+	virtual void Falling() override;
+
+	// Take amount of hit damage
+	virtual void Landed(const FHitResult& Hit);
 
 protected:
 
@@ -56,6 +79,8 @@ protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 	// End of APawn interface
+
+	float fallTime;
 
 public:
 	/** Returns CameraBoom subobject **/

@@ -68,6 +68,39 @@ void AMMOGameTestProjectCharacter::SetupPlayerInputComponent(class UInputCompone
 	InputComponent->BindTouch(IE_Released, this, &AMMOGameTestProjectCharacter::TouchStopped);
 }
 
+void AMMOGameTestProjectCharacter::Tick(float DeltaTime) {
+	Super::Tick(DeltaTime);
+}
+
+void AMMOGameTestProjectCharacter::Jump() {
+	Super::Jump();
+}
+
+void AMMOGameTestProjectCharacter::StopJumping() {
+	Super::StopJumping();
+
+	this->fallTime = this->GetLastRenderTime();
+}
+
+void AMMOGameTestProjectCharacter::Falling() {
+	Super::Falling();
+
+	this->fallTime = this->GetLastRenderTime();
+
+	this->IsFalling = true;
+}
+
+void AMMOGameTestProjectCharacter::Landed(const FHitResult& Hit) {
+	Super::Landed(Hit);
+
+	this->IsFalling = false;
+
+	float currentTime = this->GetLastRenderTime();
+		
+	this->Health -= SafeFallingHeight < currentTime - this->fallTime
+		? currentTime - this->fallTime
+		: 0;
+}
 
 void AMMOGameTestProjectCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
